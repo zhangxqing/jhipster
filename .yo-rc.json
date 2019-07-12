@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.medrd",
+      "nativeLanguage": "zh-cn"
+    },
+    "jhipsterVersion": "5.5.0",
+    "applicationType": "monolith",
+    "baseName": "jhipster",
+    "packageName": "com.medrd",
+    "packageFolder": "com/medrd",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Y2Q5ZGNmZDNiMjE1MGIzMTI0N2FjNGMxMDg1ZGM4MjM2ODA1ZjU4MmJlNGEzZmEzNjQ0YzI3YjFkYzEyMThjMzBjMzJkNGNjYmViMmYxNGI1ZDVhYjFjY2YzNjczOTM2OTU2YTJkMDYxN2I0NDZlNTY1Mjc2NzlkZDc0ZWYwMmI=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "zh-cn",
+    "languages": [
+      "zh-cn"
+    ]
+  }
+}
