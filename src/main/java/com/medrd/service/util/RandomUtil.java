@@ -3,7 +3,7 @@ package com.medrd.service.util;
 import org.apache.commons.lang3.RandomStringUtils;
 
 /**
- * Utility class for generating random Strings.
+ * 用于生成随机字符串的实用程序类。
  */
 public final class RandomUtil {
 
@@ -13,27 +13,27 @@ public final class RandomUtil {
     }
 
     /**
-     * Generate a password.
+     * 生成一个密码。
      *
-     * @return the generated password
+     * @return 生成的密码
      */
     public static String generatePassword() {
         return RandomStringUtils.randomAlphanumeric(DEF_COUNT);
     }
 
     /**
-     * Generate an activation key.
+     * 生成一个激活密钥。
      *
-     * @return the generated activation key
+     * @return 生成的激活密钥
      */
     public static String generateActivationKey() {
         return RandomStringUtils.randomNumeric(DEF_COUNT);
     }
 
     /**
-     * Generate a reset key.
+     * 生成重置key。
      *
-     * @return the generated reset key
+     * @return 生成的重置key
      */
     public static String generateResetKey() {
         return RandomStringUtils.randomNumeric(DEF_COUNT);

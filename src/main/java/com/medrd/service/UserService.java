@@ -47,19 +47,19 @@ public class UserService {
     }
 
     public Optional<User> activateRegistration(String key) {
-        log.debug("Activating user for activation key {}", key);
+        log.debug("根据激活密钥激活用户 {}", key);
         return userRepository.findOneByActivationKey(key)
             .map(user -> {
-                // activate given user for the registration key.
+                // 激活给定用户的注册密钥。
                 user.setActivated(true);
                 user.setActivationKey(null);
-                log.debug("Activated user: {}", user);
+                log.debug("激活用户: {}", user);
                 return user;
             });
     }
 
     public Optional<User> completePasswordReset(String newPassword, String key) {
-        log.debug("Reset user password for reset key {}", key);
+        log.debug("重置密钥的用户密码 {}", key);
         return userRepository.findOneByResetKey(key)
             .filter(user -> user.getResetDate().isAfter(Instant.now().minusSeconds(86400)))
             .map(user -> {

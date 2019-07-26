@@ -15,8 +15,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Base abstract class for entities which will hold definitions for created, last modified by and created,
- * last modified by date.
+ *基本抽象类的实体，这些实体将保存创建、最后修改和创建的定义，最后更改日期。
  */
 @MappedSuperclass
 @Audited

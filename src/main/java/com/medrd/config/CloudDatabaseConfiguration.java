@@ -22,7 +22,7 @@ public class CloudDatabaseConfiguration extends AbstractCloudConfig {
     @Bean
     @ConfigurationProperties(CLOUD_CONFIGURATION_HIKARI_PREFIX)
     public DataSource dataSource() {
-        log.info("Configuring JDBC datasource from a cloud provider");
+        log.info("从云提供商配置JDBC数据源");
         return connectionFactory().dataSource();
     }
 }

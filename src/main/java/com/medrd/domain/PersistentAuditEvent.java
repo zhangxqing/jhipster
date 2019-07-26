@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Persist AuditEvent managed by the Spring Boot actuator.
+ * 持久化由Spring引导执行器管理的AuditEvent。
  *
  * @see org.springframework.boot.actuate.audit.AuditEvent
  */

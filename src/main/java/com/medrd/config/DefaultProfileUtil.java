@@ -8,9 +8,9 @@ import org.springframework.core.env.Environment;
 import java.util.*;
 
 /**
- * Utility class to load a Spring profile to be used as default
- * when there is no <code>spring.profiles.active</code> set in the environment or as command line argument.
- * If the value is not available in <code>application.yml</code> then <code>dev</code> profile will be used as default.
+ * 类来加载要用作默认值的Spring配置文件
+ * 当没有<code>spring.profiles时。活动</code>设置在环境中或作为命令行参数。
+ * 如果该值在<code>应用程序中不可用。yml</code>则<code>dev</code> profile将被用作缺省值。
  */
 public final class DefaultProfileUtil {
 
@@ -20,23 +20,23 @@ public final class DefaultProfileUtil {
     }
 
     /**
-     * Set a default to use when no profile is configured.
+     * 设置一个默认值，当没有配置配置文件时使用。
      *
      * @param app the Spring application
      */
     public static void addDefaultProfile(SpringApplication app) {
         Map<String, Object> defProperties = new HashMap<>();
         /*
-        * The default profile to use when no other profiles are defined
-        * This cannot be set in the <code>application.yml</code> file.
-        * See https://github.com/spring-projects/spring-boot/issues/1219
+        * 没有定义其他配置文件时使用的默认配置文件
+        * 这不能在<code>应用程序中设置。yml > < /代码文件。
+        * 参见https://github.com/spring-projects/spring-boot/issues/1219
         */
         defProperties.put(SPRING_PROFILE_DEFAULT, JHipsterConstants.SPRING_PROFILE_DEVELOPMENT);
         app.setDefaultProperties(defProperties);
     }
 
     /**
-     * Get the profiles that are applied else get default profiles.
+     * 获取应用程序的概要文件，否则获取默认概要文件。
      *
      * @param env spring environment
      * @return profiles

@@ -25,7 +25,7 @@ import java.util.*;
 
 
 /**
- * REST controller for managing the current user's account.
+ * 用于管理当前用户帐户的REST控制器。
  */
 @RestController
 @RequestMapping("/api")
@@ -76,7 +76,7 @@ public class AccountResource {
     public void activateAccount(@RequestParam(value = "key") String key) {
         Optional<User> user = userService.activateRegistration(key);
         if (!user.isPresent()) {
-            throw new InternalServerErrorException("No user was found for this activation key");
+            throw new InternalServerErrorException("没有找到此激活密钥的用户");
         }
     }
 
@@ -89,7 +89,7 @@ public class AccountResource {
     @GetMapping("/authenticate")
     @Timed
     public String isAuthenticated(HttpServletRequest request) {
-        log.debug("REST request to check if the current user is authenticated");
+        log.debug("REST请求检查当前用户是否经过身份验证");
         return request.getRemoteUser();
     }
 
@@ -104,7 +104,7 @@ public class AccountResource {
     public UserDTO getAccount() {
         return userService.getUserWithAuthorities()
             .map(UserDTO::new)
-            .orElseThrow(() -> new InternalServerErrorException("User could not be found"));
+            .orElseThrow(() -> new InternalServerErrorException("无法找到用户"));
     }
 
     /**
@@ -117,14 +117,14 @@ public class AccountResource {
     @PostMapping("/account")
     @Timed
     public void saveAccount(@Valid @RequestBody UserDTO userDTO) {
-        final String userLogin = SecurityUtils.getCurrentUserLogin().orElseThrow(() -> new InternalServerErrorException("Current user login not found"));
+        final String userLogin = SecurityUtils.getCurrentUserLogin().orElseThrow(() -> new InternalServerErrorException("未找到当前用户登录"));
         Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
         if (existingUser.isPresent() && (!existingUser.get().getLogin().equalsIgnoreCase(userLogin))) {
             throw new EmailAlreadyUsedException();
         }
         Optional<User> user = userRepository.findOneByLogin(userLogin);
         if (!user.isPresent()) {
-            throw new InternalServerErrorException("User could not be found");
+            throw new InternalServerErrorException("无法找到用户");
         }
         userService.updateUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(),
             userDTO.getLangKey(), userDTO.getImageUrl());

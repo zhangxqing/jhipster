@@ -2,7 +2,7 @@
 /* tslint:disable */
 import '../content/scss/vendor.scss';
 
-// Imports all fontawesome core and solid icons
+// 导入所有fontawesome核心和实体图标
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -42,7 +42,7 @@ import {
     faHome
 } from '@fortawesome/free-solid-svg-icons';
 
-// Adds the SVG icon to the library so you can use it in your page
+// 将SVG图标添加到库中，以便在页面中使用
 library.add(faUser);
 library.add(faSort);
 library.add(faSortUp);

@@ -51,7 +51,7 @@ public class UserJWTController {
     }
 
     /**
-     * Object to return as body in JWT Authentication.
+     * 对象在JWT身份验证中作为主体返回。
      */
     static class JWTToken {
 

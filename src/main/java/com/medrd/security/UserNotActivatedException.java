@@ -3,7 +3,7 @@ package com.medrd.security;
 import org.springframework.security.core.AuthenticationException;
 
 /**
- * This exception is thrown in case of a not activated user trying to authenticate.
+ * 如果未激活的用户试图进行身份验证，则抛出此异常。
  */
 public class UserNotActivatedException extends AuthenticationException {
 

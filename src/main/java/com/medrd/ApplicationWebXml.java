@@ -5,8 +5,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * This is a helper Java class that provides an alternative to creating a web.xml.
- * This will be invoked only when the application is deployed to a Servlet container like Tomcat, JBoss etc.
+ * 这是一个helper Java类，它提供了创建web.xml的替代方法。
+ * 只有当应用程序部署到Servlet容器(如Tomcat、JBoss等)时才会调用此函数。
  */
 public class ApplicationWebXml extends SpringBootServletInitializer {
 

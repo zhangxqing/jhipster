@@ -12,7 +12,7 @@ import java.util.*;
 public class AuditEventConverter {
 
     /**
-     * Convert a list of PersistentAuditEvent to a list of AuditEvent
+     * 将PersistentAuditEvent列表转换为AuditEvent列表
      *
      * @param persistentAuditEvents the list to convert
      * @return the converted list.
@@ -29,7 +29,7 @@ public class AuditEventConverter {
     }
 
     /**
-     * Convert a PersistentAuditEvent to an AuditEvent
+     * 将PersistentAuditEvent转换为AuditEvent
      *
      * @param persistentAuditEvent the event to convert
      * @return the converted list.
@@ -43,7 +43,7 @@ public class AuditEventConverter {
     }
 
     /**
-     * Internal conversion. This is needed to support the current SpringBoot actuator AuditEventRepository interface
+     * 内部转换。这是支持当前SpringBoot执行器AuditEventRepository接口所需要的
      *
      * @param data the data to convert
      * @return a map of String, Object
@@ -60,8 +60,8 @@ public class AuditEventConverter {
     }
 
     /**
-     * Internal conversion. This method will allow to save additional data.
-     * By default, it will save the object as string
+     * 内部转换。这个方法将允许保存额外的数据。
+     * 默认情况下，它会将对象保存为字符串
      *
      * @param data the data to convert
      * @return a map of String, String

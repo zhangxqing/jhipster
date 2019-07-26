@@ -15,7 +15,7 @@ public final class SecurityUtils {
     }
 
     /**
-     * Get the login of the current user.
+     * 获取当前用户的登录名。
      *
      * @return the login of the current user
      */
@@ -34,7 +34,7 @@ public final class SecurityUtils {
     }
 
     /**
-     * Get the JWT of the current user.
+     * 获取当前用户的JWT。
      *
      * @return the JWT of the current user
      */
@@ -46,9 +46,9 @@ public final class SecurityUtils {
     }
 
     /**
-     * Check if a user is authenticated.
+     * 检查用户是否经过身份验证。
      *
-     * @return true if the user is authenticated, false otherwise
+     * @return 如果用户经过身份验证，则为true，否则为false
      */
     public static boolean isAuthenticated() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
@@ -59,12 +59,12 @@ public final class SecurityUtils {
     }
 
     /**
-     * If the current user has a specific authority (security role).
+     * 如果当前用户具有特定的权限(安全角色)。
      * <p>
-     * The name of this method comes from the isUserInRole() method in the Servlet API
+     * 这个方法的名称来自Servlet API中的isUserInRole()方法
      *
-     * @param authority the authority to check
-     * @return true if the current user has the authority, false otherwise
+     * @param authority 检查的权力
+     * @return 如果当前用户拥有该权限，则为true，否则为false
      */
     public static boolean isCurrentUserInRole(String authority) {
         SecurityContext securityContext = SecurityContextHolder.getContext();

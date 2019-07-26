@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
- * An authority (a security role) used by Spring Security.
+ * Spring security使用的权限(安全角色)。
  */
 @Entity
 @Table(name = "jhi_authority")

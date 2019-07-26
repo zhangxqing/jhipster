@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 
 /**
- * Utility class for HTTP headers creation.
+ * 用于创建HTTP头的实用程序类。
  */
 public final class HeaderUtil {
 

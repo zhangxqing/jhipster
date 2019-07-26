@@ -8,6 +8,6 @@ public class InvalidPasswordException extends AbstractThrowableProblem {
     private static final long serialVersionUID = 1L;
 
     public InvalidPasswordException() {
-        super(ErrorConstants.INVALID_PASSWORD_TYPE, "Incorrect password", Status.BAD_REQUEST);
+        super(ErrorConstants.INVALID_PASSWORD_TYPE, "不正确的密码", Status.BAD_REQUEST);
     }
 }

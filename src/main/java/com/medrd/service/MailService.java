@@ -63,12 +63,12 @@ public class MailService {
             message.setSubject(subject);
             message.setText(content, isHtml);
             javaMailSender.send(mimeMessage);
-            log.debug("Sent email to User '{}'", to);
+            log.debug("发送电子邮件给用户 '{}'", to);
         } catch (Exception e) {
             if (log.isDebugEnabled()) {
-                log.warn("Email could not be sent to user '{}'", to, e);
+                log.warn("无法向用户发送电子邮件 '{}'", to, e);
             } else {
-                log.warn("Email could not be sent to user '{}': {}", to, e.getMessage());
+                log.warn("无法向用户发送电子邮件 '{}': {}", to, e.getMessage());
             }
         }
     }

@@ -15,9 +15,8 @@ import org.springframework.core.env.Environment;
 import java.util.Arrays;
 
 /**
- * Aspect for logging execution of service and repository Spring components.
- *
- * By default, it only runs with the "dev" profile.
+ * 记录服务和存储库Spring组件执行的方面。
+ * 默认情况下，它只运行“dev”配置文件。
  */
 @Aspect
 public class LoggingAspect {
@@ -31,7 +30,7 @@ public class LoggingAspect {
     }
 
     /**
-     * Pointcut that matches all repositories, services and Web REST endpoints.
+     * 匹配所有存储库、服务和Web REST端点的切入点。
      */
     @Pointcut("within(@org.springframework.stereotype.Repository *)" +
         " || within(@org.springframework.stereotype.Service *)" +
@@ -41,7 +40,7 @@ public class LoggingAspect {
     }
 
     /**
-     * Pointcut that matches all Spring beans in the application's main packages.
+     * 匹配应用程序主包中的所有Spring bean的切入点。
      */
     @Pointcut("within(com.medrd.repository..*)"+
         " || within(com.medrd.service..*)"+
@@ -51,9 +50,9 @@ public class LoggingAspect {
     }
 
     /**
-     * Advice that logs methods throwing exceptions.
+     * 记录方法抛出异常的通知。
      *
-     * @param joinPoint join point for advice
+     * @param joinPoint 咨询连接点
      * @param e exception
      */
     @AfterThrowing(pointcut = "applicationPackagePointcut() && springBeanPointcut()", throwing = "e")
@@ -69,7 +68,7 @@ public class LoggingAspect {
     }
 
     /**
-     * Advice that logs when a method is entered and exited.
+     * 在方法输入和退出时记录的通知。
      *
      * @param joinPoint join point for advice
      * @return result
