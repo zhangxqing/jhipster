@@ -2,7 +2,7 @@
     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>
     </div>
-    <div class="col-md-7" [ngSwitch]="isAuthenticated()">
+    <div class="col-md-9" [ngSwitch]="isAuthenticated()">
         <div class="card-body1" style="text-align: center;margin:5% auto;" *ngSwitchCase="false">
 
             <div>
@@ -50,11 +50,20 @@
             </div>
 
         </div>
-
-        <div class="card-body1" style="font-size: 50px;text-align: center;margin:5% auto;" *ngSwitchCase="true">
-            欢迎进入医联体系统<br>
-            <span style="font-size: 35px;" id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
-                  translateValues="{username: '{{account.login}}'}"></span>
+        <div class="row col-md-12">
+            <div class="col-md-4" style="font-size: 50px;text-align: center;margin:5% auto;" *ngSwitchCase="true">
+                <span style="font-size: 35px;" *ngIf="account" ></span>
+                <div echarts [options]="options"></div>
+            </div>
+            <div class="col-md-4" style="font-size: 50px;text-align: center;margin:5% auto;" *ngSwitchCase="true">
+                <span style="font-size: 35px;" id="home-logged-message" *ngIf="account" ></span>
+                <div echarts [options]="options"></div>
+            </div>
+            <div class="col-md-4" style="font-size: 50px;text-align: center;margin:5% auto;" *ngSwitchCase="true">
+                <span style="font-size: 35px;" *ngIf="account" ></span>
+                <div echarts [options]="options"></div>
+            </div>
         </div>
+
     </div>
 </div>

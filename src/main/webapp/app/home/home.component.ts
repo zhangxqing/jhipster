@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
-import {LoginModalService, Principal, Account, LoginService, StateStorageService} from 'app/core';
-import {Router} from '@angular/router';
+import { LoginModalService, Principal, Account, LoginService, StateStorageService } from 'app/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-home',
@@ -18,6 +18,24 @@ export class HomeComponent implements OnInit {
     username: string;
     authenticationError: boolean;
 
+    options = {
+        title: {
+            text: '销售图:'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+            {
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }
+        ]
+    };
+
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
@@ -25,7 +43,6 @@ export class HomeComponent implements OnInit {
         private loginService: LoginService,
         private router: Router,
         private stateStorageService: StateStorageService
-
     ) {}
 
     ngOnInit() {

@@ -3,9 +3,10 @@ import { RouterModule } from '@angular/router';
 
 import { JhipsterSharedModule } from 'app/shared';
 import { HOME_ROUTE, HomeComponent } from './';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
-    imports: [JhipsterSharedModule, RouterModule.forChild([HOME_ROUTE])],
+    imports: [JhipsterSharedModule, RouterModule.forChild([HOME_ROUTE]), NgxEchartsModule],
     declarations: [HomeComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
