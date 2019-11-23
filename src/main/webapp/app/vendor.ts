@@ -39,10 +39,15 @@ import {
     faTrashAlt,
     faAsterisk,
     faTasks,
-    faHome
+    faHome,
+    faKey,
+    faArchway,
+    faHospital,
+    faMapMarkedAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 // 将SVG图标添加到库中，以便在页面中使用
+library.add(faKey);
 library.add(faUser);
 library.add(faSort);
 library.add(faSortUp);
@@ -77,5 +82,8 @@ library.add(faCalendarAlt);
 library.add(faSearch);
 library.add(faTrashAlt);
 library.add(faAsterisk);
+library.add(faArchway);
+library.add(faHospital);
+library.add(faMapMarkedAlt);
 
 // jhipster-needle-add-element-to-vendor - JHipster will add new menu items here

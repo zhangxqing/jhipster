@@ -1,0 +1,23 @@
+
+{
+    "jhipsterApp": {
+        "china" : {
+            "home": {
+                "title": "Chinas",
+                "createLabel": "创建新 China",
+                "createOrEditLabel": "创建或编辑 China"
+            },
+            "created": "China {{ param }} 创建成功",
+            "updated": "China {{ param }} 更新成功",
+            "deleted": "China {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 China {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "China"
+            },
+            "name": "Name",
+            "pId": "P Id"
+        }
+    }
+}

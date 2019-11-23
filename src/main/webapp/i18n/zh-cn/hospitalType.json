@@ -1,0 +1,9 @@
+{
+    "jhipsterApp": {
+        "HospitalType" : {
+            "null": "",
+            "COMPOSITE": "COMPOSITE",
+            "SPECIALIZED": "SPECIALIZED"
+        }
+    }
+}

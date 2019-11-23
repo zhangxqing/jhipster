@@ -18,20 +18,111 @@ export class HomeComponent implements OnInit {
     username: string;
     authenticationError: boolean;
 
-    options = {
-        title: {
-            text: '销售图:'
+    examOptions = {
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data: ['A市医院', 'B市医院', 'C市医院', 'D市医院', 'E市医院', 'F市医院']
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    { value: 335, name: 'A市医院' },
+                    { value: 310, name: 'B市医院' },
+                    { value: 234, name: 'C市医院' },
+                    { value: 135, name: 'D市医院' },
+                    { value: 800, name: 'E市医院' },
+                    { value: 870, name: 'F市医院' }
+                ]
+            }
+        ]
+    };
+
+    labOptions = {
+        tooltip: {},
+        legend: {
+            data: ['预算分配', '实际开销']
+        },
+        radar: {
+            // shape: 'circle',
+            name: {
+                textStyle: {
+                    color: '#fff',
+                    backgroundColor: '#999',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                { name: '销售', max: 6500 },
+                { name: '管理', max: 16000 },
+                { name: '信息', max: 30000 },
+                { name: '客服', max: 38000 },
+                { name: '研发', max: 52000 },
+                { name: '市场', max: 25000 }
+            ]
+        },
+        series: [
+            {
+                name: '预算 vs 开销',
+                type: 'radar',
+                // areaStyle: {normal: {}},
+                data: [
+                    {
+                        value: [4300, 10000, 28000, 35000, 50000, 19000],
+                        name: '预算分配'
+                    },
+                    {
+                        value: [5000, 14000, 28000, 31000, 42000, 21000],
+                        name: '实际开销'
+                    }
+                ]
+            }
+        ]
+    };
+
+    phyOptions = {
         tooltip: {},
         xAxis: {
-            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+            data: ['A市医院', 'B市医院', 'C市医院', 'D市医院', 'E市医院', 'F市医院']
         },
         yAxis: {},
         series: [
             {
-                name: '销量',
+                name: '总数',
                 type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
+                data: [100, 20, 50, 10, 10, 20],
+                itemStyle: {
+                    normal: {
+                        color: '#4ad2ff'
+                    }
+                }
             }
         ]
     };

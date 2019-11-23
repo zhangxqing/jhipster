@@ -1,0 +1,9 @@
+entity China {
+	id Long maxlength(32) required,
+    name String maxlength(25),
+    pId Long 
+}
+
+dto * with mapstruct
+service all with serviceClass
+paginate * with pagination

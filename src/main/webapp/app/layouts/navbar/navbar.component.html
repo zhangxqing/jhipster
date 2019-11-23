@@ -18,7 +18,7 @@
                     </span>
                 </a>
             </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+            <!-- 将在这里添加新的菜单项 -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
@@ -29,7 +29,20 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    <!-- 实体添加到这里的菜单 -->
+                    <li>
+                        <a class="dropdown-item" routerLink="china" routerLinkActive="active" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'map-marked-alt'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.china">User management</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" routerLink="hospital" routerLinkActive="active" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'hospital'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.hospital">User management</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

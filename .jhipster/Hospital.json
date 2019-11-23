@@ -1,0 +1,63 @@
+{
+    "name": "Hospital",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "hospitalType",
+            "javadoc": "医院等级",
+            "fieldType": "HospitalType",
+            "fieldValues": "COMPOSITE,SPECIALIZED"
+        },
+        {
+            "fieldName": "hospitalLevel",
+            "fieldType": "HospitalLevel",
+            "fieldValues": "FIRST_RATE_ONE,FIRST_RATE_TWO,FIRST_RATE_THREE,SECOND_RATE_ONE,SECOND_RATE_TWO,SECOND_RATE_THREE,THIRD_RATE_ONE,THIRD_RATE_TWO,THIRD_RATE_THREE"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "intro",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cityId",
+            "otherEntityName": "china",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191123055619",
+    "javadoc": "医院实体",
+    "entityTableName": "hospital",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

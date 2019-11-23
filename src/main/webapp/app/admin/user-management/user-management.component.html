@@ -1,11 +1,44 @@
 <div>
-    <h2>
-        <span id="user-management-page-heading" jhiTranslate="userManagement.home.title">Users</span>
-        <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['./new']">
-            <fa-icon [icon]="'plus'"></fa-icon> <span jhiTranslate="userManagement.home.createLabel">Create a new User</span>
-        </button>
-    </h2>
-    <jhi-alert></jhi-alert>
+    <div class="card">
+        <div class="card-body">
+            <form name="editForm" role="form" novalidate #editForm="ngForm">
+                <div class="form-row">
+                    <div class="form-group row col-md-4">
+                        <label class="col-form-label">会诊时间:</label>
+                        <div class="col-md-6 col-sm-8">
+                            <div class="d-flex">
+                                <input id="field_consultationTime" type="text" class="form-control"
+                                       name="consultationTime" [(ngModel)]="searchTime" format="yyyy-mm-dd" placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker">
+                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                                    <fa-icon [icon]="['fas', 'clock']"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group row col-md-4">
+                        <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['./new']">
+                            <fa-icon [icon]="'plus'"></fa-icon> <span jhiTranslate="userManagement.home.createLabel">Create a new User</span>
+                        </button>
+                    </div>
+                    <div class="form-group row col-md-4"></div>
+                    <div class="form-group row col-md-4">
+                        <button class="btn btn-primary" id="search" (click)="loadAll()">
+                            <fa-icon [icon]="'search'"></fa-icon>
+                            <span>查找</span>
+                        </button>
+                        <button class="btn btn-danger" id="reset" (click)="clear()">
+                            <fa-icon [icon]="'undo'"></fa-icon>
+                            <span>重置</span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
     <div class="table-responsive" *ngIf="users">
         <table class="table table-striped">
             <thead>

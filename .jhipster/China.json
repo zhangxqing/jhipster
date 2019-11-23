@@ -1,0 +1,27 @@
+{
+    "name": "China",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 25
+        },
+        {
+            "fieldName": "pId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191123043046",
+    "entityTableName": "china",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

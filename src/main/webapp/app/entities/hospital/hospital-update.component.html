@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-hospital-heading" jhiTranslate="jhipsterApp.hospital.home.createOrEditLabel">Create or edit a Hospital</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!hospital.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="hospital.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="hospital.name" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.hospitalType" for="field_hospitalType" [ngbTooltip]="'jhipsterApp.hospital.help.hospitalType' | translate">Hospital Type</label>
+                    <select class="form-control" name="hospitalType" [(ngModel)]="hospital.hospitalType" id="field_hospitalType" >
+                        <option value="COMPOSITE">{{'jhipsterApp.HospitalType.COMPOSITE' | translate}}</option>
+                        <option value="SPECIALIZED">{{'jhipsterApp.HospitalType.SPECIALIZED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.hospitalLevel" for="field_hospitalLevel">Hospital Level</label>
+                    <select class="form-control" name="hospitalLevel" [(ngModel)]="hospital.hospitalLevel" id="field_hospitalLevel" >
+                        <option value="FIRST_RATE_ONE">{{'jhipsterApp.HospitalLevel.FIRST_RATE_ONE' | translate}}</option>
+                        <option value="FIRST_RATE_TWO">{{'jhipsterApp.HospitalLevel.FIRST_RATE_TWO' | translate}}</option>
+                        <option value="FIRST_RATE_THREE">{{'jhipsterApp.HospitalLevel.FIRST_RATE_THREE' | translate}}</option>
+                        <option value="SECOND_RATE_ONE">{{'jhipsterApp.HospitalLevel.SECOND_RATE_ONE' | translate}}</option>
+                        <option value="SECOND_RATE_TWO">{{'jhipsterApp.HospitalLevel.SECOND_RATE_TWO' | translate}}</option>
+                        <option value="SECOND_RATE_THREE">{{'jhipsterApp.HospitalLevel.SECOND_RATE_THREE' | translate}}</option>
+                        <option value="THIRD_RATE_ONE">{{'jhipsterApp.HospitalLevel.THIRD_RATE_ONE' | translate}}</option>
+                        <option value="THIRD_RATE_TWO">{{'jhipsterApp.HospitalLevel.THIRD_RATE_TWO' | translate}}</option>
+                        <option value="THIRD_RATE_THREE">{{'jhipsterApp.HospitalLevel.THIRD_RATE_THREE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="hospital.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.phone" for="field_phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                        [(ngModel)]="hospital.phone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.imageUrl" for="field_imageUrl">Image Url</label>
+                    <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                        [(ngModel)]="hospital.imageUrl" maxlength="255"/>
+                    <div [hidden]="!(editForm.controls.imageUrl?.dirty && editForm.controls.imageUrl?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.imageUrl?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.intro" for="field_intro">Intro</label>
+                    <textarea class="form-control" name="intro" id="field_intro"
+                        [(ngModel)]="hospital.intro" ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterApp.hospital.cityId" for="field_cityId">City Id</label>
+                    <select class="form-control" id="field_cityId" name="cityId" [(ngModel)]="hospital.cityIdId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="chinaOption.id" *ngFor="let chinaOption of chinas; trackBy: trackChinaById">{{chinaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
