@@ -14,9 +14,12 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { JhipsterSharedModule } from 'app/shared';
 import { JhipsterCoreModule } from 'app/core';
 import { JhipsterAppRoutingModule } from './app-routing.module';
-import { JhipsterHomeModule } from './home/home.module';
+import { JhipsterHomeModule } from 'app/home';
 import { JhipsterAccountModule } from './account/account.module';
 import { JhipsterEntityModule } from './entities/entity.module';
+import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload';
+// import module
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
@@ -31,7 +34,9 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JhipsterHomeModule,
         JhipsterAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        JhipsterEntityModule
+        JhipsterEntityModule,
+        CommonModule,
+        FileUploadModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [

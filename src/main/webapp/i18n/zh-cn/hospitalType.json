@@ -2,8 +2,8 @@
     "jhipsterApp": {
         "HospitalType" : {
             "null": "",
-            "COMPOSITE": "COMPOSITE",
-            "SPECIALIZED": "SPECIALIZED"
+            "COMPOSITE": "综合医院",
+            "SPECIALIZED": "专科医院"
         }
     }
 }

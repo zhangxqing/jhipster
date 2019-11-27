@@ -43,7 +43,8 @@ import {
     faKey,
     faArchway,
     faHospital,
-    faMapMarkedAlt
+    faMapMarkedAlt,
+    faUpload
 } from '@fortawesome/free-solid-svg-icons';
 
 // 将SVG图标添加到库中，以便在页面中使用
@@ -85,5 +86,6 @@ library.add(faAsterisk);
 library.add(faArchway);
 library.add(faHospital);
 library.add(faMapMarkedAlt);
+library.add(faUpload);
 
 // jhipster-needle-add-element-to-vendor - JHipster will add new menu items here

@@ -12,6 +12,7 @@ import { HospitalService } from './hospital.service';
 
 @Component({
     selector: 'jhi-hospital',
+    styleUrls: ['hospital.component.scss'],
     templateUrl: './hospital.component.html'
 })
 export class HospitalComponent implements OnInit, OnDestroy {

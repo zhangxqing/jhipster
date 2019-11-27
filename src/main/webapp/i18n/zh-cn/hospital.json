@@ -5,10 +5,10 @@
             "home": {
                 "title": "Hospitals",
                 "createLabel": "创建新 Hospital",
-                "createOrEditLabel": "创建或编辑 Hospital"
+                "createOrEditLabel": "创建或编辑"
             },
             "created": "Hospital {{ param }} 创建成功",
-            "updated": "Hospital {{ param }} 更新成功",
+            "updated": "医院: {{ param }} 更新成功",
             "deleted": "Hospital {{ param }} 删除成功",
             "delete": {
                 "question": "你确定要删除 Hospital {{ id }} 吗？"
@@ -16,16 +16,16 @@
             "detail": {
                 "title": "Hospital"
             },
-            "name": "Name",
-            "hospitalType": "Hospital Type",
-            "hospitalLevel": "Hospital Level",
-            "address": "Address",
-            "phone": "Phone",
-            "imageUrl": "Image Url",
-            "intro": "Intro",
-            "cityId": "City Id",
+            "name": "医院名称",
+            "hospitalType": "医院类型",
+            "hospitalLevel": "医院等级",
+            "address": "医院地址",
+            "phone": "联系电话",
+            "imageUrl": "图片Url",
+            "intro": "简介",
+            "cityId": "地区",
             "help": {
-                "hospitalType": "医院等级"
+                "hospitalType": "医院类型"
             }
         }
     }

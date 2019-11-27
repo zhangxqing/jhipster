@@ -2,15 +2,15 @@
     "jhipsterApp": {
         "HospitalLevel" : {
             "null": "",
-            "FIRST_RATE_ONE": "FIRST_RATE_ONE",
-            "FIRST_RATE_TWO": "FIRST_RATE_TWO",
-            "FIRST_RATE_THREE": "FIRST_RATE_THREE",
-            "SECOND_RATE_ONE": "SECOND_RATE_ONE",
-            "SECOND_RATE_TWO": "SECOND_RATE_TWO",
-            "SECOND_RATE_THREE": "SECOND_RATE_THREE",
-            "THIRD_RATE_ONE": "THIRD_RATE_ONE",
-            "THIRD_RATE_TWO": "THIRD_RATE_TWO",
-            "THIRD_RATE_THREE": "THIRD_RATE_THREE"
+            "FIRST_RATE_ONE": "甲级一等",
+            "FIRST_RATE_TWO": "甲级二等",
+            "FIRST_RATE_THREE": "甲级三等",
+            "SECOND_RATE_ONE": "乙级一等",
+            "SECOND_RATE_TWO": "乙级二等",
+            "SECOND_RATE_THREE": "乙级三等",
+            "THIRD_RATE_ONE": "丙级一等",
+            "THIRD_RATE_TWO": "丙级二等",
+            "THIRD_RATE_THREE": "丙级三等"
         }
     }
 }
