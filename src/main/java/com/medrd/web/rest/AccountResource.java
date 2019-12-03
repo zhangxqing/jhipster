@@ -94,10 +94,10 @@ public class AccountResource {
     }
 
     /**
-     * GET  /account : get the current user.
+     * GET  /account : 获取当前用户。
      *
-     * @return the current user
-     * @throws RuntimeException 500 (Internal Server Error) if the user couldn't be returned
+     * @return 当前用户
+     * @throws RuntimeException 500(内部服务器错误)如果用户不能返回
      */
     @GetMapping("/account")
     @Timed

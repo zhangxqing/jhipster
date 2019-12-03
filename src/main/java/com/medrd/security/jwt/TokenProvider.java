@@ -45,8 +45,8 @@ public class TokenProvider {
         byte[] keyBytes;
         String secret = jHipsterProperties.getSecurity().getAuthentication().getJwt().getSecret();
         if (!StringUtils.isEmpty(secret)) {
-            log.warn("Warning: the JWT key used is not Base64-encoded. " +
-                "We recommend using the `jhipster.security.authentication.jwt.base64-secret` key for optimum security.");
+            log.warn("警告:所使用的JWT密钥不是base64编码的。 " +
+                "建议使用jhipster.security.authentication.jwt。用于最佳安全性的base64秘密密钥");
             keyBytes = secret.getBytes(StandardCharsets.UTF_8);
         } else {
             log.debug("Using a Base64-encoded JWT secret key");
@@ -81,7 +81,7 @@ public class TokenProvider {
             .compact();
     }
 
-    public Authentication getAuthentication(String token) {
+    Authentication getAuthentication(String token) {
         Claims claims = Jwts.parser()
             .setSigningKey(key)
             .parseClaimsJws(token)
@@ -97,22 +97,22 @@ public class TokenProvider {
         return new UsernamePasswordAuthenticationToken(principal, token, authorities);
     }
 
-    public boolean validateToken(String authToken) {
+    boolean validateToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(key).parseClaimsJws(authToken);
             return true;
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
-            log.info("Invalid JWT signature.");
-            log.trace("Invalid JWT signature trace: {}", e);
+            log.info("无效的JWT签名。");
+            log.trace("无效的JWT签名跟踪: {}", e);
         } catch (ExpiredJwtException e) {
-            log.info("Expired JWT token.");
-            log.trace("Expired JWT token trace: {}", e);
+            log.info("JWT令牌到期。");
+            log.trace("过期的JWT令牌跟踪: {}", e);
         } catch (UnsupportedJwtException e) {
-            log.info("Unsupported JWT token.");
-            log.trace("Unsupported JWT token trace: {}", e);
+            log.info("不支持JWT令牌。");
+            log.trace("不支持JWT令牌跟踪: {}", e);
         } catch (IllegalArgumentException e) {
-            log.info("JWT token compact of handler are invalid.");
-            log.trace("JWT token compact of handler are invalid trace: {}", e);
+            log.info("处理程序的JWT令牌压缩无效。");
+            log.trace("处理程序的JWT令牌压缩是无效的跟踪:{}", e);
         }
         return false;
     }

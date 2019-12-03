@@ -1,7 +1,7 @@
 package com.medrd.security;
 
 /**
- * Constants for Spring Security authorities.
+ * 角色常量
  */
 public final class AuthoritiesConstants {
 

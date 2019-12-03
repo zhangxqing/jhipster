@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * Filters incoming requests and installs a Spring Security principal if a header corresponding to a valid user is
- * found.
+ * 过滤传入的请求并安装Spring安全主体(如果与有效用户对应的头是)发现。
  */
 public class JWTFilter extends GenericFilterBean {
 
@@ -41,7 +40,7 @@ public class JWTFilter extends GenericFilterBean {
     private String resolveToken(HttpServletRequest request){
         String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            return bearerToken.substring(7, bearerToken.length());
+            return bearerToken.substring(7);
         }
         return null;
     }

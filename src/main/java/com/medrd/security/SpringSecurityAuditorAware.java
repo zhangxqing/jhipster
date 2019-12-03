@@ -8,7 +8,7 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 
 /**
- * Implementation of AuditorAware based on Spring Security.
+ * 实现基于Spring安全的AuditorAware。
  */
 @Component
 public class SpringSecurityAuditorAware implements AuditorAware<String> {

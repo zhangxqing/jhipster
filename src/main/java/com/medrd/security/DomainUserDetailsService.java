@@ -17,7 +17,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Authenticate a user from the database.
+ * 从数据库对用户进行身份验证。
+ * @author zq
  */
 @Component("userDetailsService")
 public class DomainUserDetailsService implements UserDetailsService {
