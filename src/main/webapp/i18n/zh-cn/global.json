@@ -9,6 +9,7 @@
                 "main": "数据",
                 "china": "地区",
                 "hospital": "医院",
+                "schoolgirl": "嘉宾",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

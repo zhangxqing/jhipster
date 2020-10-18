@@ -43,6 +43,12 @@
                             <span jhiTranslate="global.menu.entities.hospital">User management</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="schoolgirl" routerLinkActive="active" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'user'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.schoolgirl">schoolgirl management</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

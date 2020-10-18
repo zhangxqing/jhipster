@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { JhipsterChinaModule } from './china/china.module';
 import { JhipsterHospitalModule } from './hospital/hospital.module';
+import { JhipsterSchoolgirlModule } from './schoolgirl/schoolgirl.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -9,6 +10,7 @@ import { JhipsterHospitalModule } from './hospital/hospital.module';
     imports: [
         JhipsterChinaModule,
         JhipsterHospitalModule,
+        JhipsterSchoolgirlModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

@@ -1,0 +1,19 @@
+enum Sex{
+    MAN,
+    WOMAN
+}
+
+entity Schoolgirl {
+	number String,
+    sex Sex,
+    birth String,
+    site String,
+    nativePlace String,
+    profession String,
+    income String,
+    stature String,
+}
+
+dto * with mapstruct
+service all with serviceClass
+paginate * with pagination
